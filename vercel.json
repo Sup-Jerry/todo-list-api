@@ -14,15 +14,6 @@
     {
       "src": "/todos",
       "dest": "/api/todos"
-    },
-    {
-      "src": "/",
-      "dest": "/api/todos"
     }
-  ],
-  "functions": {
-    "api/*.js": {
-      "maxDuration": 30
-    }
-  }
+  ]
 }
