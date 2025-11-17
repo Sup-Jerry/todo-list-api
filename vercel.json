@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "api/*.js",
-      "use": "@vercel/node"
+  "functions": {
+    "api/todos.js": {
+      "runtime": "@vercel/node@latest",
+      "maxDuration": 30
     }
-  ],
+  },
   "routes": [
     {
       "src": "/api/(.*)",
@@ -13,21 +13,13 @@
     },
     {
       "src": "/todos",
-      "dest": "/api/todos"
+      "dest": "/api/todos",
+      "methods": ["GET"]
     },
     {
       "src": "/",
       "dest": "/api/todos",
       "methods": ["GET"]
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/$1"
     }
-  ],
-  "functions": {
-    "api/todos.js": {
-      "maxDuration": 30
-    }
-  }
+  ]
 }
