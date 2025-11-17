@@ -1,11 +1,5 @@
 {
   "version": 2,
-  "functions": {
-    "api/todos.js": {
-      "runtime": "@vercel/node@latest",
-      "maxDuration": 30
-    }
-  },
   "routes": [
     {
       "src": "/api/(.*)",
@@ -13,8 +7,7 @@
     },
     {
       "src": "/todos",
-      "dest": "/api/todos",
-      "methods": ["GET"]
+      "dest": "/api/todos"
     },
     {
       "src": "/",
